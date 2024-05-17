@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MySPA</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        /* Don't show the not-yet-loaded templates */
+        [ws-template], [ws-children-template] { display: none; }
+    </style>
+    <script type="text/javascript" src="Content/MySPA.head.js"></script>
+  <script type="module" crossorigin src="./assets/index-AFGsvHRk.js"></script>
+</head>
+<body>
+    <ul>
+        <li><a href="${Url_Home}">Home page</a></li>
+        <li><a href="${Url_Page1}">Second page</a></li>
+    </ul>
+    <button ws-onclick="TakeMeHome">Take me home!</button>
+    <div ws-hole="MainContainer"></div>
+
+    <div ws-children-template="HomePage">
+        <h1>My list of unique people</h1>
+        <ul ws-hole="ListContainer">
+            <li ws-template="ListItem">${Name}</li>
+        </ul>
+        <div>
+            <input ws-var="Name" placeholder="Name" />
+            <button ws-onclick="Add">Add</button>
+            <div>You are about to add: ${Name}</div>
+        </div>
+    </div>
+    <div ws-children-template="CounterPage">
+        <p>This is the second page.</p>
+        <p>Counter: ${Value}</p>
+        <button ws-onclick="Decrement">-</button>
+        /
+        <button ws-onclick="Increment">+</button>
+    </div>
+</body>
+</html>
