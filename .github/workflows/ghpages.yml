@@ -23,8 +23,8 @@ jobs:
         run: |
           dotnet nuget add source https://nuget.pkg.github.com/dotnet-websharper/index.json \
             --name github \
-            --username "${{ github.actor }}" \
-            --password "${{ secrets.GITHUB_TOKEN }}" \
+            --username granicz \
+            --password "${{ secrets.WEBSHARPER_FEED }}" \
             --store-password-in-clear-text
 
       - run: npm install -g vite
