@@ -76,7 +76,7 @@ module App =
     let currentPage = Router.InstallHash Home router
 
     type Router<'T when 'T: equality> with
-        member this.LinkHash (ep: 'T) = "/#" + this.Link ep
+        member this.LinkHash (ep: 'T) = "#" + this.Link ep
 
     [<SPAEntryPoint>]
     let Main () =
